@@ -20,8 +20,12 @@ for( let i = 0; i < test.length; i++){
 }
 items = document.getElementsByClassName("lista");
 new Sortable(cont, {
-    animation: 150,
+    animation: 200,
     onStart: function(evt){
         console.log(evt.item.getElementsByClassName("item")[0].innerHTML)
+        evt.item.getElementsByClassName("item")[0].style.visibility="hidden";
     },
+    onEnd: function(evt){
+        evt.item.getElementsByClassName("item")[0].style.visibility="visible";
+    }
 });
